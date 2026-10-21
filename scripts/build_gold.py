@@ -1,6 +1,6 @@
 """Build data/gold.json from the adjudication table, verifying every literal span against the sources.
 
-Gold is *proposed* until the user and their reviewer adjudicate (plan §3). A span that the provenance
+Gold is *proposed* until a second reviewer adjudicates it. A span that the provenance
 code cannot locate verbatim aborts the build.
 """
 from __future__ import annotations

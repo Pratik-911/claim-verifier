@@ -1,4 +1,4 @@
-"""Deterministic comparison of claimed numbers with grounded source facts (plan §5.3).
+"""Deterministic comparison of claimed numbers with grounded source facts.
 
 The LLM only *links* a claimed number to fact ids and names an operation from a fixed enum; every
 value, ratio and comparison is computed here.
@@ -11,7 +11,8 @@ from decimal import Decimal
 
 from verifier.enums import Outcome, Relation
 from verifier.llm_schemas import Assertion, NumberLink
-from verifier.numeric import compare_reported, fold_check, inequality_relation, parse_constraint, ratio
+from verifier.numeric import (FOLD_ABSTAIN_BAND, FOLD_TOLERANCE, compare_reported, fold_check, inequality_relation,
+                              parse_constraint, ratio)
 
 SIGNED = re.compile(r"[+\-−–]?\d+(?:\.\d+)?")
 REDUCTION = re.compile(r"reduc|decreas|lower|loss|lost|fell|drop|declin", re.I)
@@ -69,7 +70,15 @@ def _usable(facts: dict, fact_ids: list[str]) -> tuple[list[GroundedFact] | None
     return found, None
 
 
-def evaluate_link(assertion: Assertion, link: NumberLink, facts: dict[str, GroundedFact]) -> LinkResult:
+def fold_settings(cfg: dict) -> tuple[Decimal, Decimal]:
+    """(tolerance, abstention band) for "~N x" claims from verify.toml [numeric]."""
+    num = cfg.get("numeric", {})
+    return (Decimal(str(num.get("fold_tolerance", FOLD_TOLERANCE))),
+            Decimal(str(num.get("fold_abstain_band", FOLD_ABSTAIN_BAND))))
+
+
+def evaluate_link(assertion: Assertion, link: NumberLink, facts: dict[str, GroundedFact],
+                  fold: tuple[Decimal, Decimal] = (FOLD_TOLERANCE, FOLD_ABSTAIN_BAND)) -> LinkResult:
     found, problem = _usable(facts, link.fact_ids)
     if problem:
         return problem
@@ -85,7 +94,7 @@ def evaluate_link(assertion: Assertion, link: NumberLink, facts: dict[str, Groun
         targets = _fold_targets(claimed)
         if not targets:
             return LinkResult(Outcome.UNCLEAR, "ambiguous_interpretation", computed=computed)
-        outcomes = {fold_check(r, Decimal(t)).outcome for t in targets}
+        outcomes = {fold_check(r, Decimal(t), *fold).outcome for t in targets}
         if len(outcomes) > 1:
             return LinkResult(Outcome.UNCLEAR, "ambiguous_interpretation", computed=computed,
                               notes=[f"readings {targets} disagree"])

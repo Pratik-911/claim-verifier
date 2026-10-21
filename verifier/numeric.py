@@ -1,4 +1,4 @@
-"""Deterministic numeric rules (plan §5.3). All arithmetic in the pipeline happens here, in Decimal."""
+"""Deterministic numeric rules. All arithmetic in the pipeline happens here, in Decimal."""
 from __future__ import annotations
 
 import re

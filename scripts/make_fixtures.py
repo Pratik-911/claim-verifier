@@ -1,4 +1,4 @@
-"""Build evidence-sensitivity and injection fixtures from LixiLan-O p13 (plan §5.6 tests).
+"""Build evidence-sensitivity and injection fixtures from LixiLan-O p13 (used by tests/test_live.py).
 
 Each fixture states its evidence precondition:
 - substituted: "-1.63%" -> "-2.70%"; ratio 2.70/1.34 = 2.01, so "~2x" becomes entailed (verdict must

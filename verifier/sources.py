@@ -1,7 +1,7 @@
 """Runtime ingestion of immutable source PDFs into a cached, provenance-preserving page model.
 
-A region is usable only if text-layer characters cover it AND its glyphs pass the glyph check
-(plan §5.1). Unusable regions are OCR'd from a render and every OCR record is tied to its crop.
+A region is usable only if text-layer characters cover it AND its glyphs pass the glyph check.
+Unusable regions are OCR'd from a render and every OCR record is tied to its crop.
 """
 from __future__ import annotations
 

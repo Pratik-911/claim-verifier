@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from verifier.compute import GroundedFact, assertion_numeric_relation, evaluate_link
 from verifier.enums import Outcome, Relation
 from verifier.llm_schemas import Assertion, ClaimedNumber, NumberLink
@@ -122,3 +124,18 @@ def test_reduction_claim_against_a_stated_increase_is_a_contradiction():
     link = NumberLink(assertion_id="A1", claimed_raw="0.7", fact_ids=["F1"], operation="compare")
     assert evaluate_link(a, link, {"F1": F("F1", "+0.7")}).outcome is Outcome.MISMATCH
     assert evaluate_link(a, link, {"F1": F("F1", "-0.7")}).outcome is Outcome.MATCH
+
+
+def test_fold_tolerance_comes_from_configuration():
+    """verify.toml [numeric] must actually change the fold rule (it used to be recorded but ignored)."""
+    a = A(numbers=[("~2x", "fold")], claim_type="fold")
+    link = NumberLink(assertion_id="A1", claimed_raw="~2x", fact_ids=["F1", "F2"], operation="ratio")
+    facts = {"F1": F("F1", "-1.63"), "F2": F("F2", "-1.34")}
+    assert evaluate_link(a, link, facts).outcome is Outcome.MISMATCH  # 1.22x vs ~2x at the default 10%
+    assert evaluate_link(a, link, facts, fold=(Decimal("0.45"), Decimal("0.02"))).outcome is Outcome.MATCH
+
+
+def test_fold_settings_are_read_from_verify_toml():
+    from verifier.compute import fold_settings
+    from verifier.config import load_config
+    assert fold_settings(load_config()) == (Decimal("0.10"), Decimal("0.02"))

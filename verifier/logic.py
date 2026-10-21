@@ -1,4 +1,4 @@
-"""Two-layer claim logic (plan §0.6).
+"""Two-layer claim logic.
 
 Layer 1: the *logical relation* of each assertion to the evidence (entailed / contradicted /
 unknown), combined with Kleene strong three-valued logic.

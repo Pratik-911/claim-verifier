@@ -3,7 +3,7 @@
 Usage: python eval.py [--pred outputs/predictions.json] [--gold data/gold.json] [--no-span-check]
 
 Prints the assignment's metrics first (accuracy, confusion matrix, false supported), then the
-pilot metrics defined in plan §5.6/§7. Counts are always shown; no intervals at this sample size.
+additional decision metrics. Counts are always shown; no intervals at this sample size.
 """
 from __future__ import annotations
 
@@ -61,7 +61,7 @@ def report(m: dict) -> str:
            f"{'':>15}" + "".join(f"{lab:>15}" for lab in LABELS)]
     for gl in LABELS:
         out.append(f"{gl:>15}" + "".join(f"{m['matrix'][gl][pl]:>15}" for pl in LABELS))
-    out += ["", f"False supported: {m['false_supported']}", "", "--- pilot metrics (plan §5.6) ---",
+    out += ["", f"False supported: {m['false_supported']}", "", "--- additional metrics ---",
             f"Approval error (false supported / approvals): {_pct(m['false_supported'], m['approvals'])}",
             f"FPR among gold non-supported: {_pct(m['false_supported'], m['gold_non_supported'])}",
             f"Supported recall (true approvals / gold-supported answerable): "

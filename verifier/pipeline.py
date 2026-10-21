@@ -1,4 +1,4 @@
-"""Per-claim verification pipeline (plan §5.1): resolve -> panels -> interpret -> retrieve -> extract ->
+"""Per-claim verification pipeline: resolve -> panels -> interpret -> retrieve -> extract ->
 ground -> visual read -> compute -> judge -> policy. Every arithmetic step lives in verifier.compute."""
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pymupdf
 
-from verifier.compute import GroundedFact, LinkResult, assertion_numeric_relation, evaluate_link
+from verifier.compute import GroundedFact, LinkResult, assertion_numeric_relation, evaluate_link, fold_settings
 from verifier.config import resolve
 from verifier.enums import Outcome, Relation
 from verifier.llm import CLAIM_DEADLINE, LLM, ImagePart, LLMError, make_client
@@ -436,7 +436,7 @@ def verify_claim(claim: Claim, ctx: Context) -> Prediction:
         roles = {n.role for n in a.numbers if n.raw == ln.claimed_raw}
         if roles and roles <= {"other"}:
             continue  # numbers inside names ("type 2", "BIAsp 30") are never compared
-        r = evaluate_link(a, ln, facts)
+        r = evaluate_link(a, ln, facts, fold=fold_settings(ctx.cfg))
         results.setdefault(a.id, []).append(r)
         prio = min((ROLE_PRIORITY[rl] for rl in roles if rl in ROLE_PRIORITY), default=None)  # never dose/time
         if r.computed and a.check_category == "figure" and prio is not None and prio < computed_prio.get(a.id, 99):

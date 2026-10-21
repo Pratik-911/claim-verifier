@@ -1,4 +1,4 @@
-"""Bind explicitly named promotional panels through the document-level panel registry (plan §0.4).
+"""Bind explicitly named promotional panels through the document-level panel registry.
 
 No automatic localisation: panels are bound only when the declared scope includes panels AND the
 claim either lists panel ids (`panel_refs`) or refers to panels/charts and names them by registry

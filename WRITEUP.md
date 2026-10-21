@@ -11,7 +11,7 @@ The LLM reads and labels; Python checks and decides.
    requires verbatim quotes and re-reads values and signs from the source text.
 4. **Visual check.** A rendered crop re-reads each decisive value and its arm; disagreement abstains.
 5. **Compute.** Python does all arithmetic with Decimal: ratios, rounding intervals, inequalities.
-   "~2×" accepts ±10%, abstains between 8% and 12%, and rejects beyond that.
+   "~2×" accepts a ratio within 8% of 2, abstains between 8% and 12%, and rejects beyond that.
 6. **Judge and decide.** Gemini 4 Argon gives each assertion a relation (entailed / contradicted /
    unknown) and policy flags such as `label_scope_mismatch`. Code combines them with three-valued
    logic, and only code can confirm or refute a number. Anything uncertain becomes `cannot_verify`.
@@ -29,7 +29,7 @@ Confusion matrix (rows = gold, columns = predicted):
 
 False supported: 0
 
---- pilot metrics (plan §5.6) ---
+--- additional metrics ---
 Approval error (false supported / approvals): 0/2 (0.0%)
 FPR among gold non-supported: 0/4 (0.0%)
 Supported recall (true approvals / gold-supported answerable): 2/3 (66.7%)

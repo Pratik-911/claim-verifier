@@ -1,4 +1,4 @@
-"""Citation resolution against the runtime materials manifest (plan §5.1 step 2).
+"""Citation resolution against the runtime materials manifest.
 
 Order: explicit filenames, DOIs, exact aliases (word-bounded), and only then a fuzzy title match
 that needs an absolute score, a margin over the runner-up and a compatible year. Never forced.
