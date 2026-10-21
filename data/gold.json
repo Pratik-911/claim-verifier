@@ -1,0 +1,420 @@
+[
+  {
+    "claim_id": "C1",
+    "verdict": "overstated",
+    "scope": "claim_and_referenced_panels",
+    "text_only_verdict": "overstated",
+    "answerable": true,
+    "evidence_page": 4,
+    "evidence_span": "indicated for the treatment of adults patients with Obesity with",
+    "evidence_source": "SOLIQUA_LBL (ocr)",
+    "evidence_records": [
+      {
+        "doc_id": "SOLIQUA_LBL",
+        "page": 4,
+        "source_kind": "ocr",
+        "literal_quote": "indicated for the treatment of adults patients with Obesity with",
+        "bbox": [
+          25.350000005960464,
+          692.18,
+          682.9500000059604,
+          705.86
+        ],
+        "region_id": "p4r1"
+      },
+      {
+        "doc_id": "SOLIQUA_LBL",
+        "page": 4,
+        "source_kind": "ocr",
+        "literal_quote": "in addition to metformin with or without SGLT2 inhibitors",
+        "bbox": [
+          25.110000005960465,
+          700.1,
+          683.1900000059604,
+          714.02
+        ],
+        "region_id": "p4r1"
+      }
+    ],
+    "checks": {
+      "figure": null,
+      "population": "mismatch",
+      "drug_indication": "mismatch",
+      "actually_stated": null
+    },
+    "computed": null,
+    "why": "The supplied abridged India PI (LBL p4; 'Updated: Jan 2023', CCDS v6 29 Sep 2022) restricts the indication to adults with obesity and to use in addition to metformin; the claim ('adults with T2DM insufficiently controlled on basal insulin or oral agents') omits both label restrictions. The 'or' is an enumerated qualifier, so each listed subgroup carries label_scope_mismatch (rubric Q1). Scope: this reproduced label only; OCR spans (6 pt print).",
+    "rubric_rules": [
+      "0.5 Q1 label_scope_mismatch",
+      "0.2 enumerated disjunction"
+    ],
+    "initial_label": "overstated",
+    "alternatives": [],
+    "adjudication": {
+      "status": "proposed",
+      "adjudicator": null,
+      "reviewer_expertise": null,
+      "needs_review": false
+    }
+  },
+  {
+    "claim_id": "C2",
+    "verdict": "supported",
+    "scope": "claim_and_referenced_panels",
+    "text_only_verdict": "supported",
+    "answerable": true,
+    "evidence_page": 5,
+    "evidence_span": "Superiority:\nLS mean difference iGlarLixi\nvs BIAsp 30 (95% CI); p-value\n-0.2 (-0.4, -0.1) %; <0.001",
+    "evidence_source": "SoliMix_Rosenstock2021 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "Superiority:\nLS mean difference iGlarLixi\nvs BIAsp 30 (95% CI); p-value\n-0.2 (-0.4, -0.1) %; <0.001",
+        "bbox": [
+          375.27,
+          334.11,
+          482.42,
+          370.91
+        ],
+        "region_id": null
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "baseline HbA1c (8.6%)\nwas reduced by 1.3% with iGlarLixi and 1.1% with BIAsp 30",
+        "bbox": [
+          47.85,
+          568.73,
+          366.64,
+          590.1
+        ],
+        "region_id": null
+      }
+    ],
+    "checks": {
+      "figure": "match",
+      "population": "match",
+      "drug_indication": "match",
+      "actually_stated": "match"
+    },
+    "computed": null,
+    "why": "SoliMix Fig 1B (p5) gives the superiority LS mean difference -0.2 (95% CI -0.4, -0.1), p<0.001 — distinct from the 97.5% noninferiority CI — and the abstract (p1) states reductions of 1.3% and 1.1%; Fig 1B shows them as LS mean ± SE (-1.3 ± 0.1, -1.1 ± 0.1). 'Reduction 1.3' maps to the signed change -1.3 by rule. Background metformin ± SGLT2i is shared by both arms: omitted_context (disclosed).",
+    "rubric_rules": [
+      "0.5 omitted context (ICH E9(R1) add-on to SoC)"
+    ],
+    "initial_label": "supported",
+    "alternatives": [
+      "overstated if reviewer treats omitted background metformin as unsupported broadening"
+    ],
+    "adjudication": {
+      "status": "proposed",
+      "adjudicator": null,
+      "reviewer_expertise": null,
+      "needs_review": true
+    }
+  },
+  {
+    "claim_id": "C3",
+    "verdict": "overstated",
+    "scope": "claim_and_referenced_panels",
+    "text_only_verdict": "overstated",
+    "answerable": true,
+    "evidence_page": 13,
+    "evidence_span": "changes from baseline to Week 30 in HbA1c were −1.63% for iGlarLixi, −1.34% for",
+    "evidence_source": "LixiLan-O_Rosenstock2016 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "LixiLan-O_Rosenstock2016",
+        "page": 13,
+        "source_kind": "text_layer",
+        "literal_quote": "changes from baseline to Week 30 in HbA1c were −1.63% for iGlarLixi, −1.34% for",
+        "bbox": [
+          72.0,
+          346.97,
+          507.52,
+          362.94
+        ],
+        "region_id": null
+      }
+    ],
+    "checks": {
+      "figure": "mismatch",
+      "population": "match",
+      "drug_indication": "match",
+      "actually_stated": "match"
+    },
+    "computed": {
+      "claimed": "~2x",
+      "from_source": [
+        "-1.63",
+        "-1.34"
+      ],
+      "result": "1.22x"
+    },
+    "why": "LixiLan-O p13: LS mean HbA1c changes -1.63% (iGlarLixi) vs -1.34% (iGlar); ratio 1.2164, far outside any reading of ~2x. Table 2 (p29) agrees only at lower precision. The LBL superscript points to LixiLan-L (1.1 vs 0.6 = 1.83x); recorded, not used to rescue the claim.",
+    "rubric_rules": [
+      "5.3 fold rule"
+    ],
+    "initial_label": "overstated",
+    "alternatives": [],
+    "adjudication": {
+      "status": "proposed",
+      "adjudicator": null,
+      "reviewer_expertise": null,
+      "needs_review": false
+    }
+  },
+  {
+    "claim_id": "C4",
+    "verdict": "supported",
+    "scope": "claim_and_referenced_panels",
+    "text_only_verdict": "supported",
+    "answerable": true,
+    "evidence_page": 6,
+    "evidence_span": "42.2 (n=187)\n1.65 (1.25, 2.19)",
+    "evidence_source": "SoliMix_Rosenstock2021 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "page": 6,
+        "source_kind": "text_layer",
+        "literal_quote": "42.2 (n=187)\n1.65 (1.25, 2.19)",
+        "bbox": [
+          282.71,
+          494.35,
+          408.68,
+          508.99
+        ],
+        "region_id": null
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "page": 6,
+        "source_kind": "text_layer",
+        "literal_quote": "31.8 (n=141)",
+        "bbox": [
+          270.81,
+          508.52,
+          316.51,
+          516.54
+        ],
+        "region_id": null
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "page": 6,
+        "source_kind": "text_layer",
+        "literal_quote": "the BIAsp 30 group (Fig. 2) (exploratory\nend point)",
+        "bbox": [
+          59.75,
+          209.87,
+          213.93,
+          230.9
+        ],
+        "region_id": null
+      }
+    ],
+    "checks": {
+      "figure": "match",
+      "population": "match",
+      "drug_indication": "match",
+      "actually_stated": "match"
+    },
+    "computed": null,
+    "why": "SoliMix Fig 2 (p6), column 'OR (95% CI)': 42.2% (n=187) vs 31.8% (n=141), adjusted OR 1.65 (1.25, 2.19); the text says the proportion was higher with iGlarLixi. Caveats: exploratory endpoint; adjusted OR (crude 1.5697 is not a substitute); '42.20/31.80' equal the source (presentational flag).",
+    "rubric_rules": [
+      "5.3 trailing zeros equal",
+      "model-based estimate kept"
+    ],
+    "initial_label": "overstated (v1, wrong)",
+    "alternatives": [
+      "cannot_verify if the reviewer requires a confirmatory endpoint"
+    ],
+    "adjudication": {
+      "status": "proposed",
+      "adjudicator": null,
+      "reviewer_expertise": null,
+      "needs_review": true
+    }
+  },
+  {
+    "claim_id": "C5",
+    "verdict": "cannot_verify",
+    "scope": "claim_and_referenced_panels",
+    "text_only_verdict": "cannot_verify",
+    "answerable": false,
+    "evidence_page": 2,
+    "evidence_span": "Mean body weight decreased by 0.7 kg with iGlarLixi and increased by",
+    "evidence_source": "LixiLan-L_Aroda2016_abstract (ocr)",
+    "evidence_records": [
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "page": 2,
+        "source_kind": "ocr",
+        "literal_quote": "Mean body weight decreased by 0.7 kg with iGlarLixi and increased by",
+        "bbox": [
+          45.99,
+          337.46999999999997,
+          538.23,
+          351.15
+        ],
+        "region_id": "p2r1"
+      }
+    ],
+    "checks": {
+      "figure": null,
+      "population": "match",
+      "drug_indication": "match",
+      "actually_stated": "unclear"
+    },
+    "computed": null,
+    "why": "The abstract (raster, OCR) reports a 0.7 kg decrease vs a 0.7 kg increase with iGlar. 'Weight neutral' is a substantive no-meaningful-change claim that needs a prespecified margin or equivalence analysis; none is given (and no author statement). Weight loss, no gain, non-significance and equivalence are different assertions.",
+    "rubric_rules": [
+      "0.2 substantive neutrality needs a margin"
+    ],
+    "initial_label": "cannot_verify",
+    "alternatives": [
+      "overstated if the reviewer reads the front panel as generalising beyond LixiLan-L"
+    ],
+    "adjudication": {
+      "status": "proposed",
+      "adjudicator": null,
+      "reviewer_expertise": null,
+      "needs_review": true
+    }
+  },
+  {
+    "claim_id": "C6",
+    "verdict": "supported",
+    "scope": "claim_and_referenced_panels",
+    "text_only_verdict": "supported",
+    "answerable": true,
+    "evidence_page": 7,
+    "evidence_span": "6.3 (n=28)\n0.45 (0.28, 0.73)",
+    "evidence_source": "SoliMix_Rosenstock2021 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "page": 7,
+        "source_kind": "text_layer",
+        "literal_quote": "6.3 (n=28)\n0.45 (0.28, 0.73)",
+        "bbox": [
+          230.22,
+          216.75,
+          396.46,
+          244.26
+        ],
+        "region_id": null
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "page": 7,
+        "source_kind": "text_layer",
+        "literal_quote": "12.9 (n=57)",
+        "bbox": [
+          237.91,
+          230.93,
+          279.05,
+          238.93
+        ],
+        "region_id": null
+      }
+    ],
+    "checks": {
+      "figure": "match",
+      "population": "match",
+      "drug_indication": "match",
+      "actually_stated": "match"
+    },
+    "computed": null,
+    "why": "SoliMix Fig 3A (p7): level 2 hypoglycaemia 6.3% (n=28) iGlarLixi vs 12.9% (n=57) BIAsp 30 (arms from layout: n=442 legend row above n=441), OR 0.45 (95% CI 0.28, 0.73). Non-scored panel finding: the LBL's '55% lower risk' is a relative odds reduction; count-based RR is 0.4901.",
+    "rubric_rules": [
+      "arms from layout"
+    ],
+    "initial_label": "supported",
+    "alternatives": [],
+    "adjudication": {
+      "status": "proposed",
+      "adjudicator": null,
+      "reviewer_expertise": null,
+      "needs_review": false
+    }
+  },
+  {
+    "claim_id": "C7",
+    "verdict": "cannot_verify",
+    "scope": "claim_and_referenced_panels",
+    "text_only_verdict": "supported",
+    "answerable": false,
+    "evidence_page": 5,
+    "evidence_span": "-1.9 (-2.3, -1.4) kg; <0.001",
+    "evidence_source": "SoliMix_Rosenstock2021 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "-1.9 (-2.3, -1.4) kg; <0.001",
+        "bbox": [
+          152.11,
+          636.06,
+          245.27,
+          644.06
+        ],
+        "region_id": null
+      },
+      {
+        "doc_id": "Tabak2020_PSM",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "All P values are reported as nominal P values",
+        "bbox": [
+          70.64,
+          276.16,
+          279.23,
+          286.32
+        ],
+        "region_id": null
+      },
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "page": 2,
+        "source_kind": "ocr",
+        "literal_quote": "0.7 kg with iGlar (1.4 kg difference, P < 0.0001)",
+        "bbox": [
+          45.99,
+          354.75,
+          509.66999999999996,
+          367.95
+        ],
+        "region_id": "p2r1"
+      }
+    ],
+    "checks": {
+      "figure": "unclear",
+      "population": "match",
+      "drug_indication": "match",
+      "actually_stated": "match"
+    },
+    "computed": null,
+    "why": "The claim names three LBL panels, so their numbers are in scope. Each analysis shows a weight benefit (LixiLan-L -0.7 vs +0.7 kg at 30 wk; SoliMix -0.7 vs +1.2 kg at 26 wk; Tabák -0.62 vs +0.70 kg at 24 vs 26 wk), but the SoliMix panel's p<0.0001 is not established by the paper's P<0.001, and the LixiLan-L panel's n=365/366 and ±0.2 kg are not in the abstract. No contradiction. Caveats: post hoc PSM with nominal P (disclosed); shared participants (not three independent replications).",
+    "rubric_rules": [
+      "0.4 panel scope",
+      "5.3 inequality entailment"
+    ],
+    "initial_label": "overstated (v1)",
+    "alternatives": [
+      "supported under claim_only scope",
+      "overstated under a strict design reading"
+    ],
+    "adjudication": {
+      "status": "proposed",
+      "adjudicator": null,
+      "reviewer_expertise": null,
+      "needs_review": true
+    }
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "version": "materials-v1",
+  "review_status": "test fixtures",
+  "promotional_material": null,
+  "documents": [
+    {
+      "doc_id": "Fixture_LixiLanO_substituted",
+      "path": "tests/fixtures/Fixture_LixiLanO_substituted.pdf",
+      "doc_type": "trial_publication",
+      "doi": null,
+      "year": 2016,
+      "trial_ids": [],
+      "aliases": [],
+      "title": "Fixture_LixiLanO_substituted",
+      "sha256": "a3982d8031ab9709bb4fd6d3178b9258f26d9e8a11ee03b616a36b2e23b9788a"
+    },
+    {
+      "doc_id": "Fixture_LixiLanO_removed",
+      "path": "tests/fixtures/Fixture_LixiLanO_removed.pdf",
+      "doc_type": "trial_publication",
+      "doi": null,
+      "year": 2016,
+      "trial_ids": [],
+      "aliases": [],
+      "title": "Fixture_LixiLanO_removed",
+      "sha256": "139c25c2e6030ce6137db7aafbfb507bbbdaf6f55c0906b44d61d180b9cdec21"
+    },
+    {
+      "doc_id": "Fixture_LixiLanO_injection",
+      "path": "tests/fixtures/Fixture_LixiLanO_injection.pdf",
+      "doc_type": "trial_publication",
+      "doi": null,
+      "year": 2016,
+      "trial_ids": [],
+      "aliases": [],
+      "title": "Fixture_LixiLanO_injection",
+      "sha256": "c90535338e0c5a1d2e7b9fbe153c1c40112631b1d37077ec2bf50a9e0b6cc515"
+    }
+  ],
+  "families": [],
+  "panel_registry": {}
+}

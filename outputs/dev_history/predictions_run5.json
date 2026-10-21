@@ -1,0 +1,797 @@
+[
+  {
+    "claim_id": "C1",
+    "verdict": "overstated",
+    "checks": {
+      "figure": null,
+      "population": null,
+      "drug_indication": "mismatch",
+      "actually_stated": null
+    },
+    "evidence_page": 4,
+    "evidence_span": "Indication: SOuQuA is indicated for the treatment of adults patients with Obesity with insulficiently controlled type 2 diabetes mellitus to improve gtycemic control as\nan adjunct to diet and ezercise in addition to metformin with or without SGLT2 inhibitors, when this has not been provided by metformin alone or metformin combined with another oral gtucose lowering medicinal product\n(sulfonylurea, ginide, Dpp4 inhibitors or gliptins, and Sodium-glucose co- transporter 2 (SGLT2) inhibitors or gliflozins) or with basal Insulin",
+    "computed": null,
+    "reason": "While the composition of iGlarLixi (insulin glargine 100 U/mL + lixisenatide) is supported, the indication claim significantly broadens the supplied label text. It omits required restrictions that the indication is for adult patients with obesity, as an adjunct to diet and exercise in addition to metformin (with or without SGLT2 inhibitors), and when inadequately controlled specifically on metformin alone or metformin combined with specified oral glucose-lowering agents or basal insulin.",
+    "scope": "claim_and_referenced_panels",
+    "text_verdict": "overstated",
+    "evidence_source": "SOLIQUA_LBL (ocr)",
+    "evidence_records": [
+      {
+        "doc_id": "SOLIQUA_LBL",
+        "sha256": "f9dbdb377fc1dd878588be88eeedb10d7e81e17839fafcda86cb9f9456c7144e",
+        "page": 4,
+        "source_kind": "ocr",
+        "literal_quote": "Indication: SOuQuA is indicated for the treatment of adults patients with Obesity with insulficiently controlled type 2 diabetes mellitus to improve gtycemic control as\nan adjunct to diet and ezercise in addition to metformin with or without SGLT2 inhibitors, when this has not been provided by metformin alone or metformin combined with another oral gtucose lowering medicinal product\n(sulfonylurea, ginide, Dpp4 inhibitors or gliptins, and Sodium-glucose co- transporter 2 (SGLT2) inhibitors or gliflozins) or with basal Insulin",
+        "bbox": [
+          24.870000005960463,
+          692.18,
+          683.4300000059604,
+          722.18
+        ],
+        "region_id": "p4r1",
+        "supports": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "doc_id": "SOLIQUA_LBL",
+        "sha256": "f9dbdb377fc1dd878588be88eeedb10d7e81e17839fafcda86cb9f9456c7144e",
+        "page": 4,
+        "source_kind": "ocr",
+        "literal_quote": "iGlarLixi Is an fixed-ratio combination FRC of basal insulin glargine 100 units/mL (iGlar) and the short-acting GLP.1 RA lixisenatide (Lixi).",
+        "bbox": [
+          28.95000000596046,
+          486.5,
+          587.4300000059604,
+          496.34
+        ],
+        "region_id": "p4r1",
+        "supports": [
+          "A3"
+        ]
+      }
+    ],
+    "panel_findings": [],
+    "abstention_type": null,
+    "operational_status": "ok",
+    "disclosures": [],
+    "unresolved": []
+  },
+  {
+    "claim_id": "C2",
+    "verdict": "supported",
+    "checks": {
+      "figure": "match",
+      "population": "match",
+      "drug_indication": null,
+      "actually_stated": null
+    },
+    "evidence_page": 5,
+    "evidence_span": "Superiority:\nLS mean difference iGlarLixi\nvs BIAsp 30 (95% CI); p-value\n-0.2 (-0.4, -0.1) %; <0.001",
+    "computed": {
+      "claimed": "1.3",
+      "from_source": [
+        "-1.3"
+      ],
+      "result": "match"
+    },
+    "reason": "The efficacy comparison and numerical values for HbA1c reduction with iGlarLixi versus BIAsp 30 (1.3 ± 0.1% vs 1.1 ± 0.1%; 95% CI -0.4, -0.1; p<0.001) are entailed by the trial publication. The population description omits that patients were on basal insulin plus oral antihyperglycemic drugs (OADs), which is noted as omitted context.",
+    "scope": "claim_and_referenced_panels",
+    "text_verdict": "supported",
+    "evidence_source": "SoliMix_Rosenstock2021 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "Superiority:\nLS mean difference iGlarLixi\nvs BIAsp 30 (95% CI); p-value\n-0.2 (-0.4, -0.1) %; <0.001",
+        "bbox": [
+          375.27,
+          334.11,
+          482.42,
+          370.91
+        ],
+        "region_id": null,
+        "supports": [
+          "A1"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "-1.3 ± 0.1 %\n-1.1 ± 0.1 %",
+        "bbox": [
+          378.97,
+          237.57,
+          478.73,
+          266.12
+        ],
+        "region_id": null,
+        "supports": [
+          "A1"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "as treatment advancement in type 2 dia-\nbetes suboptimally controlled on basal insulin plus oral antihyperglycemic drugs (OADs).",
+        "bbox": [
+          47.85,
+          441.46,
+          366.59,
+          462.88
+        ],
+        "region_id": null,
+        "supports": [
+          "A2"
+        ]
+      }
+    ],
+    "panel_findings": [],
+    "abstention_type": null,
+    "operational_status": "ok",
+    "disclosures": [
+      "A1: omitted_context",
+      "A2: omitted_context"
+    ],
+    "unresolved": []
+  },
+  {
+    "claim_id": "C3",
+    "verdict": "overstated",
+    "checks": {
+      "figure": "mismatch",
+      "population": "unclear",
+      "drug_indication": "match",
+      "actually_stated": null
+    },
+    "evidence_page": 13,
+    "evidence_span": "The least squares (LS) mean \nchanges from baseline to Week 30 in HbA1c were −1.63% for iGlarLixi, −1.34% for \niGlar, and −0.85% for Lixi (Table 2; Fig. 1B).",
+    "computed": null,
+    "reason": "The claim of an approximately 2x greater HbA1c reduction with SOLIQUA (iGlarLixi) versus basal insulin (iGlar) at Week 30 is contradicted by the provided LixiLan-O evidence, which reports LS mean HbA1c changes of -1.63% for iGlarLixi and -1.34% for iGlar (and -0.85% for Lixi). Additionally, the supplied quote does not include the claimed p-value (<0.0001) or the patient population description.",
+    "scope": "claim_and_referenced_panels",
+    "text_verdict": "overstated",
+    "evidence_source": "LixiLan-O_Rosenstock2016 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "LixiLan-O_Rosenstock2016",
+        "sha256": "8d831d0e7c31cb89d38e9eb535ebef7f05eadad03fe03267ff7a30261f282393",
+        "page": 13,
+        "source_kind": "text_layer",
+        "literal_quote": "The least squares (LS) mean \nchanges from baseline to Week 30 in HbA1c were −1.63% for iGlarLixi, −1.34% for \niGlar, and −0.85% for Lixi (Table 2; Fig. 1B).",
+        "bbox": [
+          72.0,
+          319.25,
+          510.82,
+          390.42
+        ],
+        "region_id": null,
+        "supports": [
+          "A1"
+        ]
+      }
+    ],
+    "panel_findings": [],
+    "abstention_type": null,
+    "operational_status": "ok",
+    "disclosures": [],
+    "unresolved": [
+      "A2"
+    ]
+  },
+  {
+    "claim_id": "C4",
+    "verdict": "supported",
+    "checks": {
+      "figure": "match",
+      "population": "match",
+      "drug_indication": null,
+      "actually_stated": null
+    },
+    "evidence_page": 6,
+    "evidence_span": "The percentage of partic-\nipants who reached HbA1c target <7%\nwas higher in the iGlarLixi group than in\nthe BIAsp 30 group (Fig. 2) (exploratory\nend point).",
+    "computed": {
+      "claimed": "1.65",
+      "from_source": [
+        "1.65"
+      ],
+      "result": "match"
+    },
+    "reason": "All assertions in the claim are supported by the trial publication, with the claimed proportions (42.20% vs 31.80%) and odds ratio of 1.65 (95% CI 1.25-2.19) matching the reported results for achieving HbA1c <7% in adults with suboptimally controlled basal insulin-treated type 2 diabetes.",
+    "scope": "claim_and_referenced_panels",
+    "text_verdict": "supported",
+    "evidence_source": "SoliMix_Rosenstock2021 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "adults with suboptimally\ncontrolled basal insulin–treated type 2 diabetes",
+        "bbox": [
+          47.85,
+          487.15,
+          366.52,
+          508.58
+        ],
+        "region_id": null,
+        "supports": [
+          "A1"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 6,
+        "source_kind": "text_layer",
+        "literal_quote": "The percentage of partic-\nipants who reached HbA1c target <7%\nwas higher in the iGlarLixi group than in\nthe BIAsp 30 group (Fig. 2) (exploratory\nend point).",
+        "bbox": [
+          59.75,
+          175.17,
+          213.94,
+          230.9
+        ],
+        "region_id": null,
+        "supports": [
+          "A2"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 6,
+        "source_kind": "text_layer",
+        "literal_quote": "31.8 (n=141)\n31.8 (n=141)\n2.26 (1.64, 3.12)\n39.5 (n=175)\n1.90 (1.42, 2.54)\n20.3 (n=90)\n1.95 (1.35, 2.84)\n42.2 (n=187)\n1.65 (1.25, 2.19)",
+        "bbox": [
+          257.63,
+          494.35,
+          408.69,
+          619.64
+        ],
+        "region_id": null,
+        "supports": [
+          "A2"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 6,
+        "source_kind": "text_layer",
+        "literal_quote": "OR (95% CI)",
+        "bbox": [
+          451.83,
+          652.24,
+          497.73,
+          660.26
+        ],
+        "region_id": null,
+        "supports": [
+          "A2"
+        ]
+      }
+    ],
+    "panel_findings": [],
+    "abstention_type": null,
+    "operational_status": "ok",
+    "disclosures": [],
+    "unresolved": []
+  },
+  {
+    "claim_id": "C5",
+    "verdict": "cannot_verify",
+    "checks": {
+      "figure": null,
+      "population": "match",
+      "drug_indication": "match",
+      "actually_stated": "unclear"
+    },
+    "evidence_page": 2,
+    "evidence_span": "This study was conducted to demonstrate the efficacy and safety of LixiLan (iGlarLixi), a novel,\ntitratable, fixed-ratio combination of insulin glargine (iGlar) (100 units) and lixisenatide",
+    "computed": null,
+    "reason": "While the intervention (iGlarLixi) and patient population (Type 2 diabetes inadequately controlled on basal insulin and metformin) match the LixiLan-L trial, the claim that iGlarLixi is 'weight neutral' is not stated in the provided evidence. The source instead reports that mean body weight decreased by 0.7 kg with iGlarLixi and increased by 0.7 kg with iGlar (1.4 kg difference, P < 0.0001), describing this as a 'beneficial effect on body weight'. [abstained: evidence_missing]",
+    "scope": "claim_and_referenced_panels",
+    "text_verdict": "cannot_verify",
+    "evidence_source": "LixiLan-L_Aroda2016_abstract (ocr)",
+    "evidence_records": [
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "sha256": "8b669eca9a29a2279229a265762b23ba59a9739423b5ec3bd51ee8771ca3925b",
+        "page": 2,
+        "source_kind": "ocr",
+        "literal_quote": "This study was conducted to demonstrate the efficacy and safety of LixiLan (iGlarLixi), a novel,\ntitratable, fixed-ratio combination of insulin glargine (iGlar) (100 units) and lixisenatide",
+        "bbox": [
+          45.75,
+          40.11,
+          521.67,
+          70.35
+        ],
+        "region_id": "p2r1",
+        "supports": [
+          "A1"
+        ]
+      },
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "sha256": "8b669eca9a29a2279229a265762b23ba59a9739423b5ec3bd51ee8771ca3925b",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "Efficacy and Safety of LixiLan, a Titratable Fixed-Ratio Combination of Insulin Glargine Plus\nLixisenatide in Type 2 Diabetes Inadequately Controlled on Basal Insulin and Metformin: The LixiLan-L Randomized Trial",
+        "bbox": [
+          45.35,
+          94.45,
+          518.2,
+          113.37
+        ],
+        "region_id": null,
+        "supports": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "sha256": "8b669eca9a29a2279229a265762b23ba59a9739423b5ec3bd51ee8771ca3925b",
+        "page": 2,
+        "source_kind": "ocr",
+        "literal_quote": "Mean body weight decreased by 0.7 kg with iGlarLixi and increased by\n0.7 kg with iGlar (1.4 kg difference, P < 0.0001).",
+        "bbox": [
+          45.99,
+          337.46999999999997,
+          538.23,
+          367.95
+        ],
+        "region_id": "p2r1",
+        "supports": [
+          "A3"
+        ]
+      },
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "sha256": "8b669eca9a29a2279229a265762b23ba59a9739423b5ec3bd51ee8771ca3925b",
+        "page": 2,
+        "source_kind": "ocr",
+        "literal_quote": "Compared with iGlar, a substantially higher proportion of iGlarLixi-treated patients achieved glycemic\ntargets with a beneficial effect on body weight",
+        "bbox": [
+          48.87,
+          457.26,
+          546.15,
+          487.02
+        ],
+        "region_id": "p2r2",
+        "supports": [
+          "A3"
+        ]
+      }
+    ],
+    "panel_findings": [],
+    "abstention_type": "evidence_missing",
+    "operational_status": "ok",
+    "disclosures": [],
+    "unresolved": [
+      "A3"
+    ]
+  },
+  {
+    "claim_id": "C6",
+    "verdict": "supported",
+    "checks": {
+      "figure": "match",
+      "population": "match",
+      "drug_indication": null,
+      "actually_stated": null
+    },
+    "evidence_page": 7,
+    "evidence_span": "0.45 (0.28, 0.73)\n25.8 (n=114)\n0.55 (0.42, 0.74)\n31.2 (n=138)\n0.62 (0.47, 0.81)\nFavors\niGlarLixi\nRelative odds\nreduction iGlarLixi\nvs BIAsp 30\nOR† (95% CI)\nIncidence, % (n)\nFavors\nBIAsp 30\nLevel 2 hypoglycemia\n(ADA definition: <54 mg/dL [<3.0 mmol/L])",
+    "computed": {
+      "claimed": "0.45",
+      "from_source": [
+        "0.45"
+      ],
+      "result": "match"
+    },
+    "reason": "The claimed odds ratio of 0.45 (0.28, 0.73) for level-2 hypoglycemia (<54 mg/dL) with iGlarLixi versus premix BIAsp 30 is fully supported by the trial publication. The population description is supported, though it omits the non-material context that patients were on basal insulin plus oral antihyperglycemic drugs.",
+    "scope": "claim_and_referenced_panels",
+    "text_verdict": "supported",
+    "evidence_source": "SoliMix_Rosenstock2021 (text_layer)",
+    "evidence_records": [
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 7,
+        "source_kind": "text_layer",
+        "literal_quote": "0.45 (0.28, 0.73)\n25.8 (n=114)\n0.55 (0.42, 0.74)\n31.2 (n=138)\n0.62 (0.47, 0.81)\nFavors\niGlarLixi\nRelative odds\nreduction iGlarLixi\nvs BIAsp 30\nOR† (95% CI)\nIncidence, % (n)\nFavors\nBIAsp 30\nLevel 2 hypoglycemia\n(ADA definition: <54 mg/dL [<3.0 mmol/L])",
+        "bbox": [
+          60.07,
+          92.11,
+          526.84,
+          244.26
+        ],
+        "region_id": null,
+        "supports": [
+          "A1"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "BIAsp 30) as treatment advancement in type 2 dia-\nbetes suboptimally controlled on basal insulin plus oral antihyperglycemic drugs (OADs).",
+        "bbox": [
+          47.85,
+          441.46,
+          366.59,
+          462.88
+        ],
+        "region_id": null,
+        "supports": [
+          "A2"
+        ]
+      }
+    ],
+    "panel_findings": [],
+    "abstention_type": null,
+    "operational_status": "ok",
+    "disclosures": [
+      "A2: omitted_context"
+    ],
+    "unresolved": []
+  },
+  {
+    "claim_id": "C7",
+    "verdict": "cannot_verify",
+    "checks": {
+      "figure": "unclear",
+      "population": "match",
+      "drug_indication": "match",
+      "actually_stated": "match"
+    },
+    "evidence_page": 2,
+    "evidence_span": "Mean body weight decreased by 0.7 kg with iGlarLixi and increased by\n0.7 kg with iGlar (1.4 kg difference, P < 0.0001).",
+    "computed": {
+      "claimed": "-0.7",
+      "from_source": [
+        "-0.7"
+      ],
+      "result": "match"
+    },
+    "reason": "The overall weight benefit and the specific weight changes in SoliMix (-0.7 ± 0.2 kg vs +1.2 ± 0.2 kg) and the propensity-score-matched analysis (-0.62 ± 0.24 kg vs +0.70 ± 0.24 kg) are supported by the evidence. However, several panel details cannot be verified from the supplied quotes: the LixiLan-L abstract does not include the sample sizes (n=366, n=365) or standard errors (±0.2 kg), the SoliMix source reports p<0.001 rather than the claimed p<0.0001, and the p-value quote for the propensity-score-matched analysis is truncated. [abstained: evidence_missing]",
+    "scope": "claim_and_referenced_panels",
+    "text_verdict": "supported",
+    "evidence_source": "LixiLan-L_Aroda2016_abstract (ocr)",
+    "evidence_records": [
+      {
+        "doc_id": "Tabak2020_PSM",
+        "sha256": "9cbad744fa16ab221d14e4c761863a9aa732515bcb47562e09d5874eef38a7f4",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "Efﬁcacy and Safety of iGlarLixi, Fixed-Ratio\nCombination of Insulin Glargine and Lixisenatide,\nCompared with Basal-Bolus Regimen in Patients\nwith Type 2 Diabetes: Propensity Score Matched\nAnalysis",
+        "bbox": [
+          56.69,
+          107.49,
+          458.75,
+          195.15
+        ],
+        "region_id": null,
+        "supports": [
+          "A2",
+          "A3"
+        ]
+      },
+      {
+        "doc_id": "Tabak2020_PSM",
+        "sha256": "9cbad744fa16ab221d14e4c761863a9aa732515bcb47562e09d5874eef38a7f4",
+        "page": 2,
+        "source_kind": "text_layer",
+        "literal_quote": "In\npatients\nwith\nT2D\ninade-\nquately controlled on basal insulin, iGlarLixi\noffers an effective alternative to BB regimen for\nreducing\nHbA1c,\nwithout\nincreased\nrisk\nof\nhypoglycemia and weight gain.",
+        "bbox": [
+          70.87,
+          151.58,
+          293.36,
+          211.37
+        ],
+        "region_id": null,
+        "supports": [
+          "A1",
+          "A2",
+          "A3"
+        ]
+      },
+      {
+        "doc_id": "Tabak2020_PSM",
+        "sha256": "9cbad744fa16ab221d14e4c761863a9aa732515bcb47562e09d5874eef38a7f4",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "From\nthe\nLixiLan-L\nstudy,\n195\npatients who had been randomized to iGlarLixi\nwere matched for age, sex, race, T2D duration,\nbaseline body mass index, glycated hemoglobin\n(HbA1c), fasting plasma glucose, insulin dose,\nand metformin use to 195 patients who had\nbeen randomized to a BB regimen in the Get-\nGoal Duo-2 trial.",
+        "bbox": [
+          301.89,
+          338.38,
+          524.4,
+          435.54
+        ],
+        "region_id": null,
+        "supports": [
+          "A10",
+          "A11"
+        ]
+      },
+      {
+        "doc_id": "Tabak2020_PSM",
+        "sha256": "9cbad744fa16ab221d14e4c761863a9aa732515bcb47562e09d5874eef38a7f4",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "weight\ndecreased with iGlarLixi by an LS mean (SE) of\n0.62 kg (0.24) and increased with basal bolus by\nan LS mean (SE) of 0.70 kg (0.24)",
+        "bbox": [
+          301.89,
+          89.56,
+          524.37,
+          136.88
+        ],
+        "region_id": null,
+        "supports": [
+          "A1",
+          "A10",
+          "A11"
+        ]
+      },
+      {
+        "doc_id": "Tabak2020_PSM",
+        "sha256": "9cbad744fa16ab221d14e4c761863a9aa732515bcb47562e09d5874eef38a7f4",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "0.0001]).",
+        "bbox": [
+          371.34,
+          151.8,
+          412.57,
+          161.77
+        ],
+        "region_id": null,
+        "supports": [
+          "A12"
+        ]
+      },
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "sha256": "8b669eca9a29a2279229a265762b23ba59a9739423b5ec3bd51ee8771ca3925b",
+        "page": 2,
+        "source_kind": "ocr",
+        "literal_quote": "This study was conducted to demonstrate the efficacy and safety of LixiLan (iGlarLixi), a novel,\ntitratable, fixed-ratio combination of insulin glargine (iGlar) (100 units) and lixisenatide",
+        "bbox": [
+          45.75,
+          40.11,
+          521.67,
+          70.35
+        ],
+        "region_id": "p2r1",
+        "supports": [
+          "A3",
+          "A5"
+        ]
+      },
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "sha256": "8b669eca9a29a2279229a265762b23ba59a9739423b5ec3bd51ee8771ca3925b",
+        "page": 2,
+        "source_kind": "ocr",
+        "literal_quote": "Mean body weight decreased by 0.7 kg with iGlarLixi and increased by\n0.7 kg with iGlar (1.4 kg difference, P < 0.0001).",
+        "bbox": [
+          45.99,
+          337.46999999999997,
+          538.23,
+          367.95
+        ],
+        "region_id": "p2r1",
+        "supports": [
+          "A4",
+          "A5",
+          "A6"
+        ]
+      },
+      {
+        "doc_id": "LixiLan-L_Aroda2016_abstract",
+        "sha256": "8b669eca9a29a2279229a265762b23ba59a9739423b5ec3bd51ee8771ca3925b",
+        "page": 2,
+        "source_kind": "ocr",
+        "literal_quote": "beneficial effect on body weight, no additional risk of hypoglycemia, and low levels of\ngastrointestinal adverse effects in inadequately controlled, basal insulin-treated, long-standing type 2\ndiabetes.",
+        "bbox": [
+          48.87,
+          473.58,
+          545.91,
+          518.94
+        ],
+        "region_id": "p2r2",
+        "supports": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "LS mean ± SE change in bodyweight from\nbaseline to week 26, kg",
+        "bbox": [
+          96.1,
+          453.37,
+          113.7,
+          602.73
+        ],
+        "region_id": null,
+        "supports": [
+          "A7"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "LS mean difference iGlarLixi\nvs BIAsp 30 (95% CI);\nsuperiority p-value:\n-1.9 (-2.3, -1.4) kg; <0.001",
+        "bbox": [
+          148.45,
+          607.26,
+          248.93,
+          644.06
+        ],
+        "region_id": null,
+        "supports": [
+          "A9"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 5,
+        "source_kind": "text_layer",
+        "literal_quote": "-0.7 ± 0.2\n1.2 ± 0.2\n80.7 ± 16.5\nWeek 26\nBaseline\nMean ± SD\nbody weight, kg\n82.2 ± 18.5\niGlarLixi\n(n=443)\nBIAsp 30\n(n=444)",
+        "bbox": [
+          74.86,
+          401.08,
+          247.02,
+          589.94
+        ],
+        "region_id": null,
+        "supports": [
+          "A7",
+          "A8"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "treatment advancement in type 2 dia-\nbetes suboptimally controlled on basal insulin plus oral antihyperglycemic drugs (OADs).",
+        "bbox": [
+          47.85,
+          441.46,
+          366.59,
+          462.88
+        ],
+        "region_id": null,
+        "supports": [
+          "A2"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 1,
+        "source_kind": "text_layer",
+        "literal_quote": "To directly compare the efﬁcacy and safety of a ﬁxed-ratio combination, of insulin glar-\ngine 100 units/mL and the glucagon-like peptide 1 receptor agonist lixisenatide (iGlar-\nLixi)",
+        "bbox": [
+          47.85,
+          405.55,
+          366.64,
+          439.01
+        ],
+        "region_id": null,
+        "supports": [
+          "A3"
+        ]
+      },
+      {
+        "doc_id": "SoliMix_Rosenstock2021",
+        "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce",
+        "page": 8,
+        "source_kind": "text_layer",
+        "literal_quote": "The improvements in glycemic con-\ntrol and reductions in body weight seen\nwith iGlarLixi in this study are consistent\nwith those observed in the LixiLan-L\nstudy, which compared efﬁcacy and\nsafety of iGlarLixi versus basal insulin in\npeople with long-standing type 2 diabe-\ntes suboptimally controlled by basal\ninsulin ± OAD therapy over 30 weeks\n(17).",
+        "bbox": [
+          225.81,
+          162.92,
+          380.0,
+          275.57
+        ],
+        "region_id": null,
+        "supports": [
+          "A1"
+        ]
+      }
+    ],
+    "panel_findings": [
+      {
+        "assertion_id": "A4",
+        "panel_id": "P3-weight-lixilan-l",
+        "statement": "In the LixiLan-L trial, the LS mean change in body weight from baseline for SOLIQUA (n=366) was -0.7 ±0.2 kg.",
+        "relation": "unknown",
+        "policy_flags": []
+      },
+      {
+        "assertion_id": "A5",
+        "panel_id": "P3-weight-lixilan-l",
+        "statement": "In the LixiLan-L trial, the LS mean change in body weight from baseline for Insulin glargine 100 units/mL (n=365) was +0.7 ±0.2 kg.",
+        "relation": "unknown",
+        "policy_flags": []
+      },
+      {
+        "assertion_id": "A6",
+        "panel_id": "P3-weight-lixilan-l",
+        "statement": "In the LixiLan-L trial, the comparison of LS mean change in body weight between SOLIQUA and Insulin glargine had a p-value of p<0.0001.",
+        "relation": "entailed",
+        "policy_flags": []
+      },
+      {
+        "assertion_id": "A7",
+        "panel_id": "P3-weight-solimix",
+        "statement": "In the SoliMix trial, body weight change after 26 weeks for SOLIQUA (n=443) was -0.7 ±0.2 kg.",
+        "relation": "entailed",
+        "policy_flags": []
+      },
+      {
+        "assertion_id": "A8",
+        "panel_id": "P3-weight-solimix",
+        "statement": "In the SoliMix trial, body weight change after 26 weeks for Premix Insulin BIAsp 30 (n=444) was +1.2 ±0.2 kg.",
+        "relation": "entailed",
+        "policy_flags": []
+      },
+      {
+        "assertion_id": "A9",
+        "panel_id": "P3-weight-solimix",
+        "statement": "In the SoliMix trial, the comparison of body weight change between SOLIQUA and Premix Insulin BIAsp 30 had a p-value of p<0.0001.",
+        "relation": "unknown",
+        "policy_flags": []
+      },
+      {
+        "assertion_id": "A10",
+        "panel_id": "P3-weight-psm",
+        "statement": "In the propensity score matching analysis (LixiLan-L and GGD2), mean baseline change for SOLIQUA (n=195) was -0.62 ±0.24 kg.",
+        "relation": "entailed",
+        "policy_flags": []
+      },
+      {
+        "assertion_id": "A11",
+        "panel_id": "P3-weight-psm",
+        "statement": "In the propensity score matching analysis (LixiLan-L and GGD2), mean baseline change for Basal bolus therapy (n=195) was +0.70 ±0.24 kg.",
+        "relation": "entailed",
+        "policy_flags": []
+      },
+      {
+        "assertion_id": "A12",
+        "panel_id": "P3-weight-psm",
+        "statement": "In the propensity score matching analysis (LixiLan-L and GGD2), the comparison of weight change between SOLIQUA and Basal bolus therapy had a p-value of ρ<0.0001.",
+        "relation": "unknown",
+        "policy_flags": []
+      }
+    ],
+    "abstention_type": "evidence_missing",
+    "operational_status": "ok",
+    "disclosures": [
+      "A2: omitted_context"
+    ],
+    "unresolved": [
+      "A4",
+      "A5",
+      "A9",
+      "A12"
+    ]
+  }
+]

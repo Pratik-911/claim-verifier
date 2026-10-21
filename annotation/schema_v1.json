@@ -1,0 +1,676 @@
+{
+  "$defs": {
+    "Adjudication": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "default": "independent",
+          "enum": [
+            "independent",
+            "adjudicated",
+            "disputed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "final_verdict": {
+          "anyOf": [
+            {
+              "enum": [
+                "supported",
+                "overstated",
+                "cannot_verify"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Final Verdict"
+        },
+        "deciding_rule": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deciding Rule"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "title": "Adjudication",
+      "type": "object"
+    },
+    "AnnAssertion": {
+      "additionalProperties": false,
+      "properties": {
+        "assertion_id": {
+          "title": "Assertion Id",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "text",
+            "population",
+            "molecule",
+            "panel"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "origin_ref": {
+          "title": "Origin Ref",
+          "type": "string"
+        },
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "check_category": {
+          "enum": [
+            "figure",
+            "population",
+            "drug_indication",
+            "actually_stated"
+          ],
+          "title": "Check Category",
+          "type": "string"
+        },
+        "negated": {
+          "default": false,
+          "title": "Negated",
+          "type": "boolean"
+        },
+        "enumeration_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Enumeration Group"
+        },
+        "corpus_relation": {
+          "enum": [
+            "entailed",
+            "contradicted",
+            "unknown"
+          ],
+          "title": "Corpus Relation",
+          "type": "string"
+        },
+        "corpus_flags": {
+          "items": {
+            "enum": [
+              "label_scope_mismatch",
+              "unsupported_generalization",
+              "design_strengthening",
+              "omitted_context",
+              "unsupported_precision",
+              "conflicting_evidence"
+            ],
+            "type": "string"
+          },
+          "title": "Corpus Flags",
+          "type": "array"
+        },
+        "materiality": {
+          "items": {
+            "$ref": "#/$defs/Materiality"
+          },
+          "title": "Materiality",
+          "type": "array"
+        }
+      },
+      "required": [
+        "assertion_id",
+        "origin",
+        "origin_ref",
+        "statement",
+        "check_category",
+        "corpus_relation"
+      ],
+      "title": "AnnAssertion",
+      "type": "object"
+    },
+    "AnnBundle": {
+      "additionalProperties": false,
+      "properties": {
+        "bundle_id": {
+          "title": "Bundle Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "gold",
+            "alternative",
+            "pipeline",
+            "perturbed"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "labels": {
+          "items": {
+            "$ref": "#/$defs/BundleLabel"
+          },
+          "title": "Labels",
+          "type": "array"
+        }
+      },
+      "required": [
+        "bundle_id",
+        "kind",
+        "evidence_ids",
+        "labels"
+      ],
+      "title": "AnnBundle",
+      "type": "object"
+    },
+    "AnnClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "population": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Population"
+        },
+        "molecule": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Molecule"
+        },
+        "cited_paper": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cited Paper"
+        },
+        "panel_refs": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Panel Refs"
+        }
+      },
+      "required": [
+        "claim_id",
+        "text"
+      ],
+      "title": "AnnClaim",
+      "type": "object"
+    },
+    "AnnEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "doc_id": {
+          "title": "Doc Id",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "source_kind": {
+          "enum": [
+            "text_layer",
+            "ocr"
+          ],
+          "title": "Source Kind",
+          "type": "string"
+        },
+        "literal_quote": {
+          "title": "Literal Quote",
+          "type": "string"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "region_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region Id"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "doc_id",
+        "sha256",
+        "page",
+        "source_kind",
+        "literal_quote"
+      ],
+      "title": "AnnEvidence",
+      "type": "object"
+    },
+    "Attribution": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "number_raw": {
+          "title": "Number Raw",
+          "type": "string"
+        },
+        "arm": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Arm"
+        },
+        "endpoint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Endpoint"
+        },
+        "estimand_note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Estimand Note"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "number_raw"
+      ],
+      "title": "Attribution",
+      "type": "object"
+    },
+    "BundleLabel": {
+      "additionalProperties": false,
+      "properties": {
+        "assertion_id": {
+          "title": "Assertion Id",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "entailed",
+            "contradicted",
+            "unknown"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "flags": {
+          "items": {
+            "enum": [
+              "label_scope_mismatch",
+              "unsupported_generalization",
+              "design_strengthening",
+              "omitted_context",
+              "unsupported_precision",
+              "conflicting_evidence"
+            ],
+            "type": "string"
+          },
+          "title": "Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "assertion_id",
+        "relation"
+      ],
+      "title": "BundleLabel",
+      "type": "object"
+    },
+    "Materiality": {
+      "additionalProperties": false,
+      "properties": {
+        "qualification": {
+          "title": "Qualification",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "explicit_contradiction",
+            "unsupported_broadening",
+            "omitted_context"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "decision_question": {
+          "enum": [
+            "Q1_label",
+            "Q2_defining_dimension",
+            "Q3_design",
+            "none"
+          ],
+          "title": "Decision Question",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "qualification",
+        "category",
+        "decision_question",
+        "reason"
+      ],
+      "title": "Materiality",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "annotation-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "claim": {
+      "$ref": "#/$defs/AnnClaim"
+    },
+    "scope": {
+      "enum": [
+        "claim_only",
+        "claim_and_referenced_panels"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "source_stratum": {
+      "enum": [
+        "natural",
+        "enforcement",
+        "assignment_style",
+        "synthetic"
+      ],
+      "title": "Source Stratum",
+      "type": "string"
+    },
+    "family_ids": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Family Ids",
+      "type": "array"
+    },
+    "variant_of": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "claim_id this is a paraphrase/synthetic variant of",
+      "title": "Variant Of"
+    },
+    "split": {
+      "default": "unassigned",
+      "enum": [
+        "dev",
+        "claim_disjoint",
+        "test",
+        "unassigned"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "agreement_stratum": {
+      "default": "none",
+      "enum": [
+        "representative",
+        "difficult",
+        "none"
+      ],
+      "title": "Agreement Stratum",
+      "type": "string"
+    },
+    "assertions": {
+      "items": {
+        "$ref": "#/$defs/AnnAssertion"
+      },
+      "minItems": 1,
+      "title": "Assertions",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/AnnEvidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "sufficient_evidence_sets": {
+      "items": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Sufficient Evidence Sets",
+      "type": "array"
+    },
+    "bundles": {
+      "items": {
+        "$ref": "#/$defs/AnnBundle"
+      },
+      "title": "Bundles",
+      "type": "array"
+    },
+    "corpus_verdict": {
+      "enum": [
+        "supported",
+        "overstated",
+        "cannot_verify"
+      ],
+      "title": "Corpus Verdict",
+      "type": "string"
+    },
+    "attribution": {
+      "items": {
+        "$ref": "#/$defs/Attribution"
+      },
+      "title": "Attribution",
+      "type": "array"
+    },
+    "annotator": {
+      "title": "Annotator",
+      "type": "string"
+    },
+    "annotator_role": {
+      "enum": [
+        "annotator",
+        "reviewer"
+      ],
+      "title": "Annotator Role",
+      "type": "string"
+    },
+    "reviewer_expertise": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewer Expertise"
+    },
+    "independent": {
+      "title": "Independent",
+      "type": "boolean"
+    },
+    "model_prelabels_shown": {
+      "title": "Model Prelabels Shown",
+      "type": "boolean"
+    },
+    "seconds_spent": {
+      "minimum": 0,
+      "title": "Seconds Spent",
+      "type": "integer"
+    },
+    "uncertainty": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty"
+    },
+    "adjudication": {
+      "$ref": "#/$defs/Adjudication"
+    }
+  },
+  "required": [
+    "schema_version",
+    "claim",
+    "scope",
+    "source_stratum",
+    "family_ids",
+    "assertions",
+    "corpus_verdict",
+    "annotator",
+    "annotator_role",
+    "independent",
+    "model_prelabels_shown",
+    "seconds_spent"
+  ],
+  "title": "AnnotationRecord",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "annotation-v1"
+}

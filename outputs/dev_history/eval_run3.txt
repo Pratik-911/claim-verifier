@@ -1,0 +1,26 @@
+Accuracy: 4/7 (57.1%)
+
+Confusion matrix (rows = gold, columns = predicted):
+                     supported     overstated  cannot_verify
+      supported              1              0              2
+     overstated              0              2              0
+  cannot_verify              0              1              1
+
+False supported: 0
+
+--- pilot metrics (plan §5.6) ---
+Approval error (false supported / approvals): 0/1 (0.0%)
+FPR among gold non-supported: 0/4 (0.0%)
+Supported recall (true approvals / gold-supported answerable): 1/3 (33.3%)
+Decision accuracy on answerable claims: 3/5 (60.0%)
+End-to-end success per claim attempt: 3/7 (42.9%)
+Abstentions: semantic 2, operational 1
+
+Disagreements (claim: gold -> predicted):
+  C2: supported -> cannot_verify
+  C4: supported -> cannot_verify
+  C7: cannot_verify -> overstated
+
+--- evidence span check ---
+predictions: 6/6 evidence spans located verbatim on the stated page (4 text layer, 2 OCR-labelled); pypdf confirms 3/4 text-layer spans
+gold: 7/7 evidence spans located verbatim on the stated page (5 text layer, 2 OCR-labelled); pypdf confirms 5/5 text-layer spans

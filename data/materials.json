@@ -1,0 +1,474 @@
+{
+  "version": "materials-v1",
+  "review_status": "proposed by builder on 2026-10-19; aliases, panel boxes and label metadata need user confirmation",
+  "promotional_material": "SOLIQUA_LBL",
+  "documents": [
+    {
+      "doc_id": "SoliMix_Rosenstock2021",
+      "path": "papers/SoliMix_Rosenstock2021.pdf",
+      "doc_type": "trial_publication",
+      "doi": "10.2337/dc21-0393",
+      "year": 2021,
+      "trial_ids": [
+        "2017-003370-13"
+      ],
+      "title": "Advancing Therapy in Suboptimally Controlled Basal Insulin-Treated Type 2 Diabetes: Clinical Outcomes With iGlarLixi Versus Premix BIAsp 30 in the SoliMix Randomized Controlled Trial",
+      "aliases": [
+        "SoliMix",
+        "Rosenstock 2021",
+        "Rosenstock et al. 2021"
+      ],
+      "sha256": "06b99ba961b4cb13cbfb8058bfb2a0c5646213b72d6e562038a02395e7493cce"
+    },
+    {
+      "doc_id": "LixiLan-O_Rosenstock2016",
+      "path": "papers/LixiLan-O_Rosenstock2016.pdf",
+      "doc_type": "trial_publication_author_manuscript",
+      "doi": null,
+      "year": 2016,
+      "trial_ids": [
+        "NCT02058147"
+      ],
+      "title": "Benefits of LixiLan, a Titratable Fixed-Ratio Combination of Insulin Glargine plus Lixisenatide versus Insulin Glargine and Lixisenatide Monocomponents in Type 2 Diabetes Inadequately Controlled on Oral Agents: The LixiLan-O Randomized Trial",
+      "aliases": [
+        "LixiLan-O",
+        "Rosenstock 2016",
+        "Rosenstock et al. 2016"
+      ],
+      "sha256": "8d831d0e7c31cb89d38e9eb535ebef7f05eadad03fe03267ff7a30261f282393"
+    },
+    {
+      "doc_id": "LixiLan-L_Aroda2016_abstract",
+      "path": "papers/LixiLan-L_Aroda2016_abstract.pdf",
+      "doc_type": "abstract",
+      "doi": "10.2337/dc16-1495",
+      "year": 2016,
+      "trial_ids": [
+        "NCT02058160"
+      ],
+      "title": "Efficacy and Safety of LixiLan, a Titratable Fixed-Ratio Combination of Insulin Glargine Plus Lixisenatide in Type 2 Diabetes Inadequately Controlled on Basal Insulin and Metformin: The LixiLan-L Randomized Trial",
+      "aliases": [
+        "LixiLan-L",
+        "LixiLan-L abstract",
+        "Aroda 2016",
+        "Aroda et al. 2016"
+      ],
+      "notes": "Abstract body is a raster screenshot; the page also links a published Erratum (raster region).",
+      "sha256": "8b669eca9a29a2279229a265762b23ba59a9739423b5ec3bd51ee8771ca3925b"
+    },
+    {
+      "doc_id": "Tabak2020_PSM",
+      "path": "papers/Tabak2020_PSM.pdf",
+      "doc_type": "secondary_analysis",
+      "doi": "10.1007/s13300-019-00735-7",
+      "year": 2020,
+      "trial_ids": [
+        "NCT02058160",
+        "NCT01768559"
+      ],
+      "title": "Efficacy and Safety of iGlarLixi, Fixed-Ratio Combination of Insulin Glargine and Lixisenatide, Compared with Basal-Bolus Regimen in Patients with Type 2 Diabetes: Propensity Score Matched Analysis",
+      "aliases": [
+        "Tabák 2020",
+        "Tabak 2020",
+        "Tabák et al. 2020",
+        "propensity-score-matching analysis",
+        "propensity score matching analysis",
+        "PSM analysis"
+      ],
+      "sha256": "9cbad744fa16ab221d14e4c761863a9aa732515bcb47562e09d5874eef38a7f4"
+    },
+    {
+      "doc_id": "SOLIQUA_LBL",
+      "path": "papers/SOLIQUA_LBL.pdf",
+      "doc_type": "promotional",
+      "doi": null,
+      "year": 2024,
+      "trial_ids": [],
+      "title": "SOLIQUA leave-behind (Sanofi India)",
+      "aliases": [
+        "SOLIQUA LBL",
+        "SOLIQUA_LBL",
+        "LBL"
+      ],
+      "label": {
+        "kind": "abridged_prescribing_information_reproduced_in_promotional_material",
+        "jurisdiction": "India",
+        "updated": "Jan 2023",
+        "source": "Insulin Glargine + Lixisenatide CCDS v6 dated 29 Sep 2022",
+        "pages": [
+          4
+        ],
+        "panel_id": "P4-abridged-PI",
+        "authority_note": "Authoritative only for label/indication claims; never evidence for the promotion's own efficacy claims."
+      },
+      "sha256": "f9dbdb377fc1dd878588be88eeedb10d7e81e17839fafcda86cb9f9456c7144e"
+    }
+  ],
+  "families": [
+    {
+      "family_id": "SoliMix",
+      "trial_ids": [
+        "2017-003370-13"
+      ],
+      "documents": [
+        "SoliMix_Rosenstock2021"
+      ]
+    },
+    {
+      "family_id": "LixiLan-O",
+      "trial_ids": [
+        "NCT02058147"
+      ],
+      "documents": [
+        "LixiLan-O_Rosenstock2016"
+      ]
+    },
+    {
+      "family_id": "LixiLan-L",
+      "trial_ids": [
+        "NCT02058160"
+      ],
+      "documents": [
+        "LixiLan-L_Aroda2016_abstract",
+        "Tabak2020_PSM"
+      ],
+      "note": "Tabák PSM reuses LixiLan-L participants (shared participants => same dependency component)."
+    },
+    {
+      "family_id": "GetGoal Duo-2",
+      "trial_ids": [
+        "NCT01768559"
+      ],
+      "documents": [
+        "Tabak2020_PSM"
+      ]
+    },
+    {
+      "family_id": "SOLIQUA label (India)",
+      "trial_ids": [],
+      "documents": [
+        "SOLIQUA_LBL"
+      ]
+    }
+  ],
+  "panel_registry": {
+    "SOLIQUA_LBL": [
+      {
+        "panel_id": "P1-profile",
+        "page": 1,
+        "bbox": [
+          150,
+          620,
+          660,
+          950
+        ],
+        "label": "Cover patient profile",
+        "aliases": [],
+        "context": [],
+        "kind": "illustration"
+      },
+      {
+        "panel_id": "P2-hba1c-vs-premix",
+        "page": 2,
+        "bbox": [
+          40,
+          135,
+          650,
+          405
+        ],
+        "label": "Superior HbA1c reduction vs premix BIAsp 30 (arrows, 95% CI, p)",
+        "aliases": [
+          "HbA1c superiority panel"
+        ],
+        "context": [],
+        "kind": "claim_panel",
+        "sources": [
+          "SoliMix_Rosenstock2021"
+        ]
+      },
+      {
+        "panel_id": "P2-2x-vs-basal-insulin",
+        "page": 2,
+        "bbox": [
+          40,
+          440,
+          650,
+          530
+        ],
+        "label": "~2x greater HbA1c reduction vs basal insulin (iGlar), Week 30",
+        "aliases": [
+          "2x HbA1c panel"
+        ],
+        "context": [],
+        "kind": "claim_panel",
+        "sources": [
+          "LixiLan-O_Rosenstock2016"
+        ]
+      },
+      {
+        "panel_id": "P2-hba1c-target-vs-premix",
+        "page": 2,
+        "bbox": [
+          40,
+          570,
+          650,
+          955
+        ],
+        "label": "Patients achieving HbA1c <7% vs premix (bar chart, OR)",
+        "aliases": [
+          "HbA1c <7% chart"
+        ],
+        "context": [],
+        "kind": "claim_panel",
+        "sources": [
+          "SoliMix_Rosenstock2021"
+        ]
+      },
+      {
+        "panel_id": "P3-any-hypo-vs-premix",
+        "page": 3,
+        "bbox": [
+          40,
+          140,
+          650,
+          230
+        ],
+        "label": "Lower rate of any level of hypoglycemia vs premix",
+        "aliases": [
+          "any hypoglycemia panel"
+        ],
+        "context": [],
+        "kind": "claim_panel",
+        "sources": [
+          "SoliMix_Rosenstock2021"
+        ]
+      },
+      {
+        "panel_id": "P3-level2-hypo-55pct",
+        "page": 3,
+        "bbox": [
+          40,
+          245,
+          650,
+          355
+        ],
+        "label": "55% lower risk of level-2 hypoglycemia vs premix (OR 0.45)",
+        "aliases": [
+          "level-2 hypoglycemia panel",
+          "55% panel"
+        ],
+        "context": [],
+        "kind": "claim_panel",
+        "sources": [
+          "SoliMix_Rosenstock2021"
+        ]
+      },
+      {
+        "panel_id": "P3-weight-header",
+        "page": 3,
+        "bbox": [
+          95,
+          395,
+          620,
+          512
+        ],
+        "label": "Weight Benefit header: change in weight from baseline while switching from basal insulin",
+        "aliases": [],
+        "context": [],
+        "kind": "panel_header"
+      },
+      {
+        "panel_id": "P3-weight-lixilan-l",
+        "page": 3,
+        "bbox": [
+          85,
+          512,
+          290,
+          800
+        ],
+        "label": "Weight panel: LixiLan-L pivotal trial data",
+        "aliases": [
+          "LixiLan-L"
+        ],
+        "context": [
+          "P3-weight-header"
+        ],
+        "kind": "claim_panel",
+        "sources": [
+          "LixiLan-L_Aroda2016_abstract"
+        ]
+      },
+      {
+        "panel_id": "P3-weight-solimix",
+        "page": 3,
+        "bbox": [
+          290,
+          512,
+          475,
+          800
+        ],
+        "label": "Weight panel: SoliMix pivotal trial data",
+        "aliases": [
+          "SoliMix"
+        ],
+        "context": [
+          "P3-weight-header"
+        ],
+        "kind": "claim_panel",
+        "sources": [
+          "SoliMix_Rosenstock2021"
+        ]
+      },
+      {
+        "panel_id": "P3-weight-psm",
+        "page": 3,
+        "bbox": [
+          475,
+          512,
+          660,
+          800
+        ],
+        "label": "Weight panel: propensity score matching analysis (LixiLan-L and GGD2)",
+        "aliases": [
+          "propensity-score-matching analysis",
+          "propensity score matching analysis",
+          "PSM"
+        ],
+        "context": [
+          "P3-weight-header"
+        ],
+        "kind": "claim_panel",
+        "sources": [
+          "Tabak2020_PSM"
+        ]
+      },
+      {
+        "panel_id": "P3-summary-vs-premix",
+        "page": 3,
+        "bbox": [
+          80,
+          820,
+          650,
+          935
+        ],
+        "label": "Summary box vs premix BIAsp 30 (HbA1c, weight, hypoglycemia)",
+        "aliases": [
+          "summary box"
+        ],
+        "context": [],
+        "kind": "claim_panel",
+        "sources": [
+          "SoliMix_Rosenstock2021"
+        ]
+      },
+      {
+        "panel_id": "P4-front-powerful-efficacy",
+        "page": 4,
+        "bbox": [
+          85,
+          185,
+          300,
+          225
+        ],
+        "label": "Front panel: Powerful efficacy",
+        "aliases": [
+          "Powerful efficacy"
+        ],
+        "context": [],
+        "kind": "claim_panel"
+      },
+      {
+        "panel_id": "P4-front-low-hypo",
+        "page": 4,
+        "bbox": [
+          450,
+          175,
+          600,
+          235
+        ],
+        "label": "Front panel: Low rates of hypoglycemia",
+        "aliases": [
+          "Low rates of hypoglycemia"
+        ],
+        "context": [],
+        "kind": "claim_panel"
+      },
+      {
+        "panel_id": "P4-front-weight-neutral",
+        "page": 4,
+        "bbox": [
+          105,
+          385,
+          275,
+          420
+        ],
+        "label": "Front panel: Weight neutral",
+        "aliases": [
+          "Weight neutral front panel"
+        ],
+        "context": [],
+        "kind": "claim_panel"
+      },
+      {
+        "panel_id": "P4-front-easy-start",
+        "page": 4,
+        "bbox": [
+          470,
+          385,
+          590,
+          420
+        ],
+        "label": "Front panel: Easy start",
+        "aliases": [
+          "Easy start"
+        ],
+        "context": [],
+        "kind": "claim_panel"
+      },
+      {
+        "panel_id": "P4-footnotes",
+        "page": 4,
+        "bbox": [
+          20,
+          455,
+          690,
+          630
+        ],
+        "label": "Abbreviations and footnotes (incl. adjusted-OR note, SoliMix and PSM descriptions)",
+        "aliases": [],
+        "context": [],
+        "kind": "footnotes"
+      },
+      {
+        "panel_id": "P4-references",
+        "page": 4,
+        "bbox": [
+          20,
+          630,
+          690,
+          690
+        ],
+        "label": "References 1-5",
+        "aliases": [],
+        "context": [],
+        "kind": "references"
+      },
+      {
+        "panel_id": "P4-abridged-PI",
+        "page": 4,
+        "bbox": [
+          20,
+          685,
+          690,
+          920
+        ],
+        "label": "Abridged Prescribing Information (India): indication, dosing, safety",
+        "aliases": [
+          "Prescribing Information"
+        ],
+        "context": [],
+        "kind": "label"
+      }
+    ]
+  }
+}

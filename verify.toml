@@ -1,0 +1,40 @@
+# Submission configuration. Loaded automatically by the exact command:
+#   python verify.py data/claims.json
+# Every value here is recorded in outputs/run_meta.json.
+
+[run]
+scope = "claim_and_referenced_panels"   # product default is "claim_only"
+materials = "data/materials.json"
+predictions = "outputs/predictions.json"
+llm_log = "outputs/llm_log.jsonl"
+run_meta = "outputs/run_meta.json"
+corpus_dir = "corpus"
+max_workers = 4
+claim_timeout_s = 600   # per-claim deadline; checked before every LLM call
+
+[models]
+extract = "gemini-3.8-flash"
+extract_thinking = "medium"
+interpret_thinking = "low"   # decomposition; medium took ~60 s per claim
+judge = "gemini-4-argon"
+# "high" timed out (>180 s) on 5/5 attempts at the same C5 judgment on 2026-10-20; "medium" answered in ~11 s
+# with the same relations. Code makes the verdict either way.
+judge_thinking = "medium"
+max_retries = 3
+request_timeout_s = 180   # google-genai has no default timeout
+
+[versions]
+rubric = "rubric-v1"
+schema = "schema-v1"
+numeric_rules = "numeric-v1"
+
+[ingest]
+ocr_dpi = 300
+crop_dpi = 200
+
+[numeric]
+fold_tolerance = "0.10"
+fold_abstain_band = "0.02"
+
+[auth]
+location = "global"   # Vertex location when GOOGLE_CLOUD_LOCATION is unset

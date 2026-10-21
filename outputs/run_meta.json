@@ -1,0 +1,51 @@
+{
+  "run_id": "fece52f9db9b",
+  "started": "2026-10-20T06:00:37.243036+00:00",
+  "finished": "2026-10-20T06:07:40.788750+00:00",
+  "config_path": "/Users/pratik/Desktop/temporary/claim-verifier/verify.toml",
+  "config": {
+    "run": {
+      "scope": "claim_and_referenced_panels",
+      "materials": "data/materials.json",
+      "predictions": "outputs/predictions.json",
+      "llm_log": "outputs/llm_log.jsonl",
+      "run_meta": "outputs/run_meta.json",
+      "corpus_dir": "corpus",
+      "max_workers": 4,
+      "claim_timeout_s": 600
+    },
+    "models": {
+      "extract": "gemini-3.8-flash",
+      "extract_thinking": "medium",
+      "interpret_thinking": "low",
+      "judge": "gemini-4-argon",
+      "judge_thinking": "medium",
+      "max_retries": 3,
+      "request_timeout_s": 180
+    },
+    "versions": {
+      "rubric": "rubric-v1",
+      "schema": "schema-v1",
+      "numeric_rules": "numeric-v1"
+    },
+    "ingest": {
+      "ocr_dpi": 300,
+      "crop_dpi": 200
+    },
+    "numeric": {
+      "fold_tolerance": "0.10",
+      "fold_abstain_band": "0.02"
+    },
+    "auth": {
+      "location": "global"
+    }
+  },
+  "backend": "vertex",
+  "python": "3.12.14",
+  "n_claims": 7,
+  "verdicts": {
+    "supported": 2,
+    "overstated": 2,
+    "cannot_verify": 3
+  }
+}

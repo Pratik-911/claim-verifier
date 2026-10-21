@@ -1,0 +1,11 @@
+google-genai
+pydantic
+pymupdf
+pypdf
+rapidocr
+onnxruntime
+rank-bm25
+rapidfuzz
+python-dotenv
+pytest
+numpy

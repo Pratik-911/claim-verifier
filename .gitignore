@@ -1,0 +1,12 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.ledger/
+corpus/
+outputs/artifacts/
+.ls-venv/
+outputs/runs/
+outputs/smoke/
+outputs/errors.log
